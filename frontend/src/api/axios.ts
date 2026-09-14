@@ -1,7 +1,10 @@
 import axios from 'axios';
 
+// Uses VITE_API_URL env var if set, otherwise falls back to the deployed backend
+const BASE_URL = import.meta.env.VITE_API_URL || 'https://loopr-efqe.vercel.app/api';
+
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: BASE_URL,
   headers: { 'Content-Type': 'application/json' },
 });
 
